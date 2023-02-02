@@ -1,0 +1,3 @@
+name: simple_ai_chat
+packages:
+  - packages/**
