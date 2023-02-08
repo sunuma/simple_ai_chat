@@ -1,5 +1,0 @@
-library api;
-
-class ApiClient {
-
-}
