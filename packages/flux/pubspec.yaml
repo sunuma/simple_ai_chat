@@ -11,6 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # package path
+  api:
+    path: ../api
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
