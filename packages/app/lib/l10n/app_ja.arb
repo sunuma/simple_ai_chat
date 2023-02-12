@@ -1,0 +1,32 @@
+{
+  "@@locale": "ja",
+  "appTitle": "Simple AI Chat",
+  "welcomeMessage1": "Welcome to Simple AI Chat!!",
+  "welcomeMessage2": "Log in with your account to continue",
+  "logIn": "Log in",
+  "signUp": "Sign Up",
+
+  "logInTitle": "Welcome back",
+  "emailAddress": "Email Address",
+  "continue": "Continue",
+  "toSignUpMessage": "Don't have an account?",
+  "or": "or",
+  "continueGoogle": "continue With Google",
+
+  "enterPassword": "Enter your password",
+  "edit": "Edit",
+  "password": "Password",
+  "forgotPassword": "Forgot password?",
+
+  "newChat": "New chat",
+  "lightMode": "Light Mode",
+  "darkMode": "Dark Mode",
+  "openAiDiscord": "OpenAI Discord",
+  "updateFaq": "Update & FAQ",
+  "logOut": "Log out",
+
+  "examples": "Examples",
+  "exampleMessage1": "Explain quantum computing in simple terms →",
+  "exampleMessage2": "Got any creative ideas for a 10 year old’s birthday? →",
+  "exampleMessage3": "How do I make an HTTP request in Javascript? →"
+}
