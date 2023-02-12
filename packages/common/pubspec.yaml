@@ -11,6 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_hooks: ^0.18.5+1
+  hooks_riverpod: ^2.1.1
+  # widget
+  loading_animation_widget: ^1.2.0+4
+
   app:
     path: ../app
 
