@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       darkTheme: themeColors.dark(),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Destination.chat.screen(),
+      home: Destination.welcome.screen(),
       routes: Map.fromIterables(
         Destination.values.map((e) => e.routeName),
         Destination.values.map((e) => (context) => e.screen())
