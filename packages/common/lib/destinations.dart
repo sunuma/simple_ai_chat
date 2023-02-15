@@ -1,7 +1,7 @@
-import 'package:app/chat.dart';
-import 'package:app/sign_in.dart';
-import 'package:app/sign_up.dart';
-import 'package:app/welcome.dart';
+import 'package:app/ui/chat.dart';
+import 'package:app/ui/sign_in.dart';
+import 'package:app/ui/sign_up.dart';
+import 'package:app/ui/welcome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
