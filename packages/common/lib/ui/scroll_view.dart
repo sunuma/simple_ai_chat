@@ -4,7 +4,8 @@ class NormalScrollView extends StatelessWidget {
   final List<Widget> children;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
-  final MainAxisAlignment? alignment;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
   final bool scrollBarVisibility;
 
   const NormalScrollView({
@@ -12,7 +13,8 @@ class NormalScrollView extends StatelessWidget {
     required this.children,
     this.padding,
     this.margin,
-    this.alignment,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
     this.scrollBarVisibility = false
   });
 
@@ -27,7 +29,8 @@ class NormalScrollView extends StatelessWidget {
             padding: padding,
             margin: margin,
             child: Column(
-              mainAxisAlignment: alignment ?? MainAxisAlignment.center,
+              mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.center,
+              crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
               children: children,
             ),
           ),

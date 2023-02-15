@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 class ScrollFooterView extends StatelessWidget {
   final List<Widget> children;
   final Widget? footerView;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
 
   const ScrollFooterView({
     super.key,
     required this.children,
-    this.footerView
+    this.footerView,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment
   });
 
   @override
@@ -21,6 +25,8 @@ class ScrollFooterView extends StatelessWidget {
             children: [
               Expanded(
                 child: NormalScrollView(
+                  mainAxisAlignment: mainAxisAlignment,
+                  crossAxisAlignment: crossAxisAlignment,
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   children: children,
                 ),
