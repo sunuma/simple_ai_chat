@@ -1,10 +1,12 @@
 import 'package:app/chat.dart';
 import 'package:app/sign_in.dart';
 import 'package:app/sign_up.dart';
+import 'package:app/welcome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum Destination {
+  welcome,
   signIn,
   signUp,
   chat,
@@ -20,6 +22,8 @@ const List<String> _defaultArguments = [];
 extension DestinationRoute on Destination {
   String get routeName {
     switch (this) {
+      case Destination.welcome:
+        return "welcome";
       case Destination.signIn:
         return "/sign_in";
       case Destination.signUp:
@@ -33,6 +37,8 @@ extension DestinationRoute on Destination {
 extension DestinationScreen on Destination {
   StatelessWidget screen({List<String> arguments = _defaultArguments}) {
     switch (this) {
+      case Destination.welcome:
+        return const Welcome();
       case Destination.signIn:
         return const SignIn();
       case Destination.signUp:
