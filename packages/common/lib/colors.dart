@@ -6,7 +6,7 @@ class ThemeColors {
   ThemeColors(BuildContext context) :
         _isDark = MediaQuery.platformBrightnessOf(context) == Brightness.dark;
 
-  ThemeData dark() {
+  ThemeData dark(BuildContext context) {
     final themeData = ThemeData.dark();
     return themeData.copyWith(
         colorScheme: themeData.colorScheme.copyWith(
@@ -22,14 +22,14 @@ class ThemeColors {
           surface: DarkColors.background.color,
           onSurface: DarkColors.textPrimary.color,
         ),
-        //elevatedButtonTheme: _elevatedButtonThemeData(),
+        elevatedButtonTheme: _elevatedButtonThemeData(context),
         //textButtonTheme: _textButtonThemeData(),
         //inputDecorationTheme: inputDecorationTheme(),
         //checkboxTheme: _checkboxThemeData()
     );
   }
 
-  ThemeData lights() {
+  ThemeData lights(BuildContext context) {
     final themeData = ThemeData.light();
     return themeData.copyWith(
         colorScheme: themeData.colorScheme.copyWith(
@@ -45,12 +45,14 @@ class ThemeColors {
             surface: LightColors.background.color,
             onSurface: LightColors.textPrimary.color
         ),
-        //elevatedButtonTheme: _elevatedButtonThemeData(),
+        elevatedButtonTheme: _elevatedButtonThemeData(context),
         //textButtonTheme: _textButtonThemeData(),
         //inputDecorationTheme: inputDecorationTheme(),
         //checkboxTheme: _checkboxThemeData()
     );
   }
+
+  ElevatedButtonThemeData _elevatedButtonThemeData(BuildContext context) => ElevatedButtonThemeData(style: ElevatedButton.styleFrom(foregroundColor: Colors.white));
 }
 
 enum DarkColors {

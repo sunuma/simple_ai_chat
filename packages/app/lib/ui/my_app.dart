@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
     final themeColors = ThemeColors(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: themeColors.lights(),
-      darkTheme: themeColors.dark(),
+      theme: themeColors.lights(context),
+      darkTheme: themeColors.dark(context),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Destination.welcome.screen(),
