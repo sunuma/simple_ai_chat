@@ -1,7 +1,10 @@
-enum AssetPath {
-  logo(value: "assets/logo.png");
+import 'package:flutter/material.dart';
 
-  final String value;
+class AssetPath {
+  final bool _isDark;
 
-  const AssetPath({required this.value});
+  AssetPath(BuildContext context):
+        _isDark = Theme.of(context).brightness == Brightness.dark;
+
+  String get logo => _isDark ? "assets/logo_d.png" : "assets/logo_l.png";
 }
