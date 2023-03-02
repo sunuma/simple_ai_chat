@@ -64,14 +64,14 @@ class _Buttons extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton(
-                onPressed: () => Destination.signIn.push(context, pushType: DestinationPushType.cupertino),
+                onPressed: () => Destination.signIn.push(context),
                 child: Text(localization.logIn)
               ),
             ),
             const SizedBox(width: 30),
             Expanded(
               child: ElevatedButton(
-                  onPressed: () => Destination.signUp.push(context, pushType: DestinationPushType.cupertino),
+                  onPressed: () => Destination.signUp.push(context),
                   child: Text(localization.signUp)
               ),
             ),
