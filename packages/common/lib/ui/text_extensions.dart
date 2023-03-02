@@ -99,8 +99,14 @@ class LabelMedium extends Text {
 }
 
 class LabelSmall extends Text {
-  LabelSmall(this.text, this.context, {super.key}): super(text, style: Theme.of(context).textTheme.labelSmall);
+  LabelSmall(
+    this.text,
+    this.align,
+    this.context,
+    {super.key}
+  ): super(text, textAlign: align, style: Theme.of(context).textTheme.labelSmall);
 
   final String text;
+  final TextAlign? align;
   final BuildContext context;
 }
