@@ -21,7 +21,8 @@ class Welcome extends StatelessWidget {
               const SizedBox(height: 15),
               _Message(),
               const SizedBox(height: 30),
-              _Buttons()
+              _Buttons(),
+              const SizedBox(height: 30)
             ]
           ),
         ),
@@ -64,15 +65,15 @@ class _Buttons extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton(
-                onPressed: () => Destination.signIn.push(context),
+                onPressed: () => Destination.signIn.pushReplacement(context),
                 child: Text(localization.logIn)
               ),
             ),
             const SizedBox(width: 30),
             Expanded(
               child: ElevatedButton(
-                  onPressed: () => Destination.signUp.push(context),
-                  child: Text(localization.signUp)
+                onPressed: () => Destination.signUp.pushReplacement(context),
+                child: Text(localization.signUp)
               ),
             ),
           ],
