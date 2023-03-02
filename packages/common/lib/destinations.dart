@@ -72,4 +72,27 @@ extension DestinationPush on Destination {
         );
     }
   }
+
+  pushReplacement(BuildContext context, {
+    DestinationPushType pushType = DestinationPushType.material,
+    List<String> arguments = _defaultArguments
+  }) {
+    switch (pushType) {
+      case DestinationPushType.material:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) {
+            return screen(arguments: arguments);
+          })
+        );
+        break;
+      case DestinationPushType.cupertino:
+        Navigator.pushReplacement(
+          context,
+          CupertinoPageRoute(builder: (context) {
+            return screen(arguments: arguments);
+          })
+        );
+    }
+  }
 }
