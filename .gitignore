@@ -131,3 +131,8 @@ app.*.symbols
 
 # Open AI API Config
 open_ai_api_config.dart
+
+# sample json
+open_ai_create_completion_sample_response.json
+open_ai_model_list_sample_response.json
+open_ai_retrieve_model_sample_response.json
