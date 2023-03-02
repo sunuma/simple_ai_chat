@@ -1,6 +1,7 @@
 import 'package:app/localization/app_localization.dart';
 import 'package:common/assets.dart';
 import 'package:common/colors.dart';
+import 'package:common/destinations.dart';
 import 'package:common/ui/text_extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,8 @@ class SignIn extends StatelessWidget {
               const SizedBox(height: 5),
               _SeparateBorder(),
               const SizedBox(height: 20),
-              _SignInGoogleButton()
+              _SignInGoogleButton(),
+              const SizedBox(height: 30)
             ],
           ),
         ),
@@ -86,14 +88,12 @@ class _SignUpMessage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TitleSmall(AppLocalization(context).toSignUpMessage, context),
+        LabelMedium(AppLocalization(context).toSignUpMessage, context),
         TextButton(
-          onPressed: () {
-
-          },
+          onPressed: () => Destination.signUp.pushReplacement(context),
           child: Text(
             AppLocalization(context).signUp,
-            style: TextStyle(color: Theme.of(context).primaryColor)
+            style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 12)
           )
         )
       ],
