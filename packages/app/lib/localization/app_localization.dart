@@ -23,5 +23,9 @@ class AppLocalization {
   String get edit => _appLocalizations.edit;
   String get password => _appLocalizations.password;
   String get forgotPassword => _appLocalizations.forgotPassword;
+  // Sign Up
+  String get createYourAccount => _appLocalizations.createYourAccount;
+  String get signUpMessage => _appLocalizations.signUpMessage;
+  String get loginMessage => _appLocalizations.logInMessage;
 
 }

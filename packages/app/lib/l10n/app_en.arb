@@ -13,6 +13,10 @@
   "or": "OR",
   "continueGoogle": "Continue With Google",
 
+  "createYourAccount": "Create your account",
+  "signUpMessage": "Please note that phone verification is required for\nsignup. Your number will only be used to verify\nyour identity for security purposes.",
+  "logInMessage": "Already have an account?",
+
   "enterPassword": "Enter your password",
   "edit": "Edit",
   "password": "Password",
