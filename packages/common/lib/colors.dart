@@ -1,3 +1,4 @@
+import 'package:common/theme_extensions.dart';
 import 'package:flutter/material.dart';
 
 class ThemeColors {
@@ -110,7 +111,8 @@ enum DarkColors {
   required(value: 0xffbf2c25),
   buttonHighlight(value: 0xff429174),
   buttonBorder(value: 0xffe1e3e7),
-  buttonBorderHighlight(value: 0xffe5e5e5);
+  buttonBorderHighlight(value: 0xffe5e5e5),
+  textFieldBackground(value: 0xff40414e);
 
   const DarkColors({required this.value});
 
@@ -132,52 +134,22 @@ enum LightColors {
   required(value: 0xffbf2c25),
   buttonHighlight(value: 0xff429174),
   buttonBorder(value: 0xffe1e3e7),
-  buttonBorderHighlight(value: 0xffe5e5e5);
+  buttonBorderHighlight(value: 0xffe5e5e5),
+  textFieldBackground(value: 0xff40414e);
 
   const LightColors({required this.value});
 
   final int value;
 }
 
-extension on DarkColors {
+extension DarkColorsExt on DarkColors {
   Color get color {
     return Color(value);
   }
 }
 
-extension on LightColors {
+extension LightColorsExt on LightColors {
   Color get color {
     return Color(value);
   }
-}
-
-class BorderButtonStyle extends ThemeExtension<BorderButtonStyle> {
-  const BorderButtonStyle({
-    required this.borderSide,
-    required this.backgroundColor,
-    required this.elevation
-  });
-
-  final BorderSide borderSide;
-  final Color backgroundColor;
-  final double elevation;
-
-  @override
-  ThemeExtension<BorderButtonStyle> copyWith() => defaultTheme;
-
-  @override
-  ThemeExtension<BorderButtonStyle> lerp(covariant ThemeExtension<BorderButtonStyle>? other, double t) {
-    if (other is! BorderButtonStyle) {
-      return this;
-    }
-    return defaultTheme;
-  }
-
-  static get defaultTheme => BorderButtonStyle(
-    borderSide: BorderSide(
-      color: LightColors.buttonBorder.color
-    ),
-    backgroundColor: Colors.transparent,
-    elevation: 0
-  );
 }
