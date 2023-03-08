@@ -61,7 +61,7 @@ class _Message extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = AppLocalization(context).signUpMessage;
-    return LabelSmall(text, TextAlign.center , context);
+    return LabelSmall(text, context, align: TextAlign.center);
   }
 }
 
