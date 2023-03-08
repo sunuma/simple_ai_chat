@@ -2,6 +2,7 @@ import 'package:app/localization/app_localization.dart';
 import 'package:common/assets.dart';
 import 'package:common/colors.dart';
 import 'package:common/destinations.dart';
+import 'package:common/theme_extensions.dart';
 import 'package:common/ui/text_extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -73,9 +74,7 @@ class _ContinueButton extends StatelessWidget {
       height: 50,
       margin: const EdgeInsets.symmetric(horizontal: 50),
       child: ElevatedButton(
-          onPressed: () {
-
-          },
+          onPressed: () => Destination.chat.pushReplacement(context),
           child: Text(AppLocalization(context).continue1)
       ),
     );

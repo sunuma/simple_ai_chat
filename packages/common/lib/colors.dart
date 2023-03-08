@@ -1,3 +1,4 @@
+import 'package:common/theme_extensions.dart';
 import 'package:flutter/material.dart';
 
 class ThemeColors {
@@ -27,9 +28,7 @@ class ThemeColors {
       textButtonTheme: _textButtonThemeData(context),
       inputDecorationTheme: inputDecorationTheme(),
       //checkboxTheme: _checkboxThemeData()
-      extensions: <ThemeExtension<dynamic>>[
-        BorderButtonStyle.defaultTheme
-      ]
+      extensions: _darkThemeExtensions()
     );
   }
 
@@ -54,9 +53,7 @@ class ThemeColors {
       textButtonTheme: _textButtonThemeData(context),
       inputDecorationTheme: inputDecorationTheme(),
       //checkboxTheme: _checkboxThemeData()
-      extensions: <ThemeExtension<dynamic>>[
-        BorderButtonStyle.defaultTheme
-      ]
+      extensions: _lightThemeExtensions()
     );
   }
 
@@ -73,26 +70,37 @@ class ThemeColors {
     )
   );
   InputDecorationTheme inputDecorationTheme() => InputDecorationTheme(
-      contentPadding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-      border: OutlineInputBorder(
-          borderSide: BorderSide(color: _isDark ? DarkColors.fieldBorder.color : LightColors.fieldBorder.color),
-      ),
-      focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: _isDark ? DarkColors.primary.color : LightColors.primary.color),
-      ),
-      errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: _isDark ? DarkColors.fieldError.color : LightColors.fieldError.color),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: _isDark ? DarkColors.primary.color : LightColors.primary.color),
-      ),
-      hintStyle: TextStyle(
-          fontSize: 13,
-          color: _isDark ? DarkColors.fieldHint.color : LightColors.fieldHint.color
-      ),
-      errorStyle: TextStyle(fontSize: 9, color: _isDark ? DarkColors.fieldError.color : LightColors.fieldError.color),
-    );
-
+    contentPadding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+    border: OutlineInputBorder(
+        borderSide: BorderSide(color: _isDark ? DarkColors.fieldBorder.color : LightColors.fieldBorder.color),
+    ),
+    focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: _isDark ? DarkColors.primary.color : LightColors.primary.color),
+    ),
+    errorBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: _isDark ? DarkColors.fieldError.color : LightColors.fieldError.color),
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: _isDark ? DarkColors.primary.color : LightColors.primary.color),
+    ),
+    hintStyle: TextStyle(
+        fontSize: 13,
+        color: _isDark ? DarkColors.fieldHint.color : LightColors.fieldHint.color
+    ),
+    errorStyle: TextStyle(fontSize: 9, color: _isDark ? DarkColors.fieldError.color : LightColors.fieldError.color),
+  );
+  List<ThemeExtension<dynamic>> _darkThemeExtensions() {
+    return [
+      BorderButtonStyle.defaultTheme,
+      ChatViewStyle.defaultDarkTheme
+    ];
+  }
+  List<ThemeExtension<dynamic>> _lightThemeExtensions() {
+    return [
+      BorderButtonStyle.defaultTheme,
+      ChatViewStyle.defaultLightTheme
+    ];
+  }
 }
 
 enum DarkColors {
@@ -106,11 +114,13 @@ enum DarkColors {
   fieldHint(value: 0xff8e8e9e),
   background(value: 0xff343540),
   panelBackground(value: 0xff3e3f4a),
+  panelForeground(value: 0xff202123),
   sideMenuBackground(value: 0xff202123),
   required(value: 0xffbf2c25),
   buttonHighlight(value: 0xff429174),
   buttonBorder(value: 0xffe1e3e7),
-  buttonBorderHighlight(value: 0xffe5e5e5);
+  buttonBorderHighlight(value: 0xffe5e5e5),
+  textFieldBackground(value: 0xff40414e);
 
   const DarkColors({required this.value});
 
@@ -128,56 +138,27 @@ enum LightColors {
   fieldHint(value: 0xff8e8e9e),
   background(value: 0xffffffff),
   panelBackground(value: 0xfff7f7f8),
+  panelForeground(value: 0xffd9d9e2),
   sideMenuBackground(value: 0xff202123),
   required(value: 0xffbf2c25),
   buttonHighlight(value: 0xff429174),
   buttonBorder(value: 0xffe1e3e7),
-  buttonBorderHighlight(value: 0xffe5e5e5);
+  buttonBorderHighlight(value: 0xffe5e5e5),
+  textFieldBackground(value: 0xffffffff);
 
   const LightColors({required this.value});
 
   final int value;
 }
 
-extension on DarkColors {
+extension DarkColorsExt on DarkColors {
   Color get color {
     return Color(value);
   }
 }
 
-extension on LightColors {
+extension LightColorsExt on LightColors {
   Color get color {
     return Color(value);
   }
-}
-
-class BorderButtonStyle extends ThemeExtension<BorderButtonStyle> {
-  const BorderButtonStyle({
-    required this.borderSide,
-    required this.backgroundColor,
-    required this.elevation
-  });
-
-  final BorderSide borderSide;
-  final Color backgroundColor;
-  final double elevation;
-
-  @override
-  ThemeExtension<BorderButtonStyle> copyWith() => defaultTheme;
-
-  @override
-  ThemeExtension<BorderButtonStyle> lerp(covariant ThemeExtension<BorderButtonStyle>? other, double t) {
-    if (other is! BorderButtonStyle) {
-      return this;
-    }
-    return defaultTheme;
-  }
-
-  static get defaultTheme => BorderButtonStyle(
-    borderSide: BorderSide(
-      color: LightColors.buttonBorder.color
-    ),
-    backgroundColor: Colors.transparent,
-    elevation: 0
-  );
 }

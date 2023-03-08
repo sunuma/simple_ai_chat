@@ -43,9 +43,17 @@ class BodySmall extends Text {
 }
 
 class TitleLarge extends Text {
-  TitleLarge(this.text, this.context, {super.key}): super(text, style: Theme.of(context).textTheme.titleLarge);
+  TitleLarge(
+    this.text,
+    this.context,
+    {
+      super.key,
+      this.align = TextAlign.start
+    }
+  ): super(text, textAlign: align, style: Theme.of(context).textTheme.titleLarge);
 
   final String text;
+  final TextAlign? align;
   final BuildContext context;
 }
 
@@ -85,9 +93,17 @@ class DisplaySmall extends Text {
 }
 
 class LabelLarge extends Text {
-  LabelLarge(this.text, this.context, {super.key}): super(text, style: Theme.of(context).textTheme.labelLarge);
+  LabelLarge(
+    this.text,
+    this.context,
+    {
+      super.key,
+      this.align = TextAlign.start
+    }
+  ): super(text, textAlign: align, style: Theme.of(context).textTheme.labelLarge);
 
   final String text;
+  final TextAlign? align;
   final BuildContext context;
 }
 
@@ -101,9 +117,11 @@ class LabelMedium extends Text {
 class LabelSmall extends Text {
   LabelSmall(
     this.text,
-    this.align,
     this.context,
-    {super.key}
+    {
+      super.key,
+      this.align = TextAlign.start
+    }
   ): super(text, textAlign: align, style: Theme.of(context).textTheme.labelSmall);
 
   final String text;
