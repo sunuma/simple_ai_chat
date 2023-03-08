@@ -36,11 +36,15 @@ class ChatViewStyle extends ThemeExtension<ChatViewStyle> {
   const ChatViewStyle({
     required this.backgroundColor,
     required this.panelBackground,
+    required this.myCommentBgColor,
+    required this.aiCommentBgColor,
     required this.panelForeground,
     required this.decoration
   });
 
   final Color backgroundColor;
+  final Color myCommentBgColor;
+  final Color aiCommentBgColor;
   final Color panelBackground;
   final Color panelForeground;
   final InputDecoration decoration;
@@ -49,6 +53,8 @@ class ChatViewStyle extends ThemeExtension<ChatViewStyle> {
   ThemeExtension<ChatViewStyle> copyWith() {
     return ChatViewStyle(
       backgroundColor: backgroundColor,
+      myCommentBgColor: myCommentBgColor,
+      aiCommentBgColor: aiCommentBgColor,
       panelBackground: panelBackground,
       panelForeground: panelForeground,
       decoration: decoration
@@ -62,6 +68,8 @@ class ChatViewStyle extends ThemeExtension<ChatViewStyle> {
     }
     return ChatViewStyle(
       backgroundColor: backgroundColor,
+      myCommentBgColor: myCommentBgColor,
+      aiCommentBgColor: aiCommentBgColor,
       panelBackground: panelBackground,
       panelForeground: panelForeground,
       decoration: decoration
@@ -70,6 +78,8 @@ class ChatViewStyle extends ThemeExtension<ChatViewStyle> {
 
   static get defaultDarkTheme => ChatViewStyle(
     backgroundColor: DarkColors.background.color,
+    myCommentBgColor: DarkColors.background.color,
+    aiCommentBgColor: DarkColors.aiCommentBackground.color,
     panelBackground: DarkColors.panelBackground.color,
     panelForeground: DarkColors.panelForeground.color,
     decoration: InputDecoration(
@@ -84,6 +94,8 @@ class ChatViewStyle extends ThemeExtension<ChatViewStyle> {
 
   static get defaultLightTheme => ChatViewStyle(
     backgroundColor: LightColors.background.color,
+    myCommentBgColor: LightColors.background.color,
+    aiCommentBgColor: LightColors.panelBackground.color,
     panelBackground: LightColors.panelBackground.color,
     panelForeground: LightColors.panelForeground.color,
     decoration: InputDecoration(

@@ -120,7 +120,8 @@ enum DarkColors {
   buttonHighlight(value: 0xff429174),
   buttonBorder(value: 0xffe1e3e7),
   buttonBorderHighlight(value: 0xffe5e5e5),
-  textFieldBackground(value: 0xff40414e);
+  textFieldBackground(value: 0xff40414e),
+  aiCommentBackground(value: 0xff444653);
 
   const DarkColors({required this.value});
 
@@ -144,7 +145,8 @@ enum LightColors {
   buttonHighlight(value: 0xff429174),
   buttonBorder(value: 0xffe1e3e7),
   buttonBorderHighlight(value: 0xffe5e5e5),
-  textFieldBackground(value: 0xffffffff);
+  textFieldBackground(value: 0xffffffff),
+  aiCommentBackground(value: 0xff444653);
 
   const LightColors({required this.value});
 
