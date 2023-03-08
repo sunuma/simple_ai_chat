@@ -46,6 +46,8 @@ dependencies:
   # package path
   common:
     path: ../common
+  model:
+    path: ../model
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +78,7 @@ flutter:
   assets:
     - assets/logo_d.png
     - assets/logo_l.png
+    - assets/thumbnail_ai.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
