@@ -25,7 +25,7 @@ class ScrollFooterView extends StatelessWidget {
             children: [
               Expanded(
                 child: NormalScrollView(
-                  mainAxisAlignment: mainAxisAlignment,
+                  mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
                   crossAxisAlignment: crossAxisAlignment,
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   children: children,

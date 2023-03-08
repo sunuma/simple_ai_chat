@@ -32,30 +32,64 @@ class BorderButtonStyle extends ThemeExtension<BorderButtonStyle> {
   );
 }
 
-class ChatTextFieldStyle extends ThemeExtension<ChatTextFieldStyle> {
-  const ChatTextFieldStyle({
-    required this.inputDecoration
+class ChatViewStyle extends ThemeExtension<ChatViewStyle> {
+  const ChatViewStyle({
+    required this.backgroundColor,
+    required this.panelBackground,
+    required this.panelForeground,
+    required this.decoration
   });
 
-  final InputDecoration inputDecoration;
+  final Color backgroundColor;
+  final Color panelBackground;
+  final Color panelForeground;
+  final InputDecoration decoration;
 
   @override
-  ThemeExtension<ChatTextFieldStyle> copyWith() => defaultTheme;
-
-  @override
-  ThemeExtension<ChatTextFieldStyle> lerp(covariant ThemeExtension<ChatTextFieldStyle>? other, double t) {
-    if (other is! ChatTextFieldStyle) {
-      return this;
-    }
-    return defaultTheme;
+  ThemeExtension<ChatViewStyle> copyWith() {
+    return ChatViewStyle(
+      backgroundColor: backgroundColor,
+      panelBackground: panelBackground,
+      panelForeground: panelForeground,
+      decoration: decoration
+    );
   }
 
-  static get defaultTheme => ChatTextFieldStyle(
-    inputDecoration: InputDecoration(
-      fillColor: LightColors.textFieldBackground.color,
+  @override
+  ThemeExtension<ChatViewStyle> lerp(covariant ThemeExtension<ChatViewStyle>? other, double t) {
+    if (other is! ChatViewStyle) {
+      return this;
+    }
+    return ChatViewStyle(
+      backgroundColor: backgroundColor,
+      panelBackground: panelBackground,
+      panelForeground: panelForeground,
+      decoration: decoration
+    );
+  }
+
+  static get defaultDarkTheme => ChatViewStyle(
+    backgroundColor: DarkColors.background.color,
+    panelBackground: DarkColors.panelBackground.color,
+    panelForeground: DarkColors.panelForeground.color,
+    decoration: InputDecoration(
+      fillColor: DarkColors.textFieldBackground.color,
       filled: true,
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10.0)
+        borderSide: BorderSide(color: DarkColors.textFieldBackground.color, width: 1),
+        borderRadius: BorderRadius.circular(3.0)
+      )
+    )
+  );
+
+  static get defaultLightTheme => ChatViewStyle(
+    backgroundColor: LightColors.background.color,
+    panelBackground: LightColors.panelBackground.color,
+    panelForeground: LightColors.panelForeground.color,
+    decoration: InputDecoration(
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: LightColors.buttonBorderHighlight.color),
+        borderRadius: BorderRadius.circular(3.0)
       )
     )
   );

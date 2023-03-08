@@ -27,5 +27,10 @@ class AppLocalization {
   String get createYourAccount => _appLocalizations.createYourAccount;
   String get signUpMessage => _appLocalizations.signUpMessage;
   String get loginMessage => _appLocalizations.logInMessage;
-
+  // Chat
+  String get appTitle => _appLocalizations.appTitle;
+  String get examples => _appLocalizations.examples;
+  String get exampleMessage1 => _appLocalizations.exampleMessage1;
+  String get exampleMessage2 => _appLocalizations.exampleMessage2;
+  String get exampleMessage3 => _appLocalizations.exampleMessage3;
 }
