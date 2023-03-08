@@ -66,7 +66,9 @@ class _MessageThumbnail extends StatelessWidget {
         color: messageData.isSelf ? messageData.thumbnailColor ?? Colors.black : Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(3)
       ),
-      child: messageData.isSelf ? Text(messageData.name ?? "") : Image.asset(AssetPath(context).thumbnailAI),
+      child: messageData.isSelf ?
+        Text(messageData.name ?? "", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)) :
+        Image.asset(AssetPath(context).thumbnailAI),
     );
   }
 }
