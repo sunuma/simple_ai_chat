@@ -42,7 +42,7 @@ class _Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = AppLocalization(context).welcomeMessage1;
-    return TitleLarge(text, context);
+    return TitleMedium(text, context);
   }
 }
 
@@ -50,7 +50,7 @@ class _Message extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = AppLocalization(context).welcomeMessage2;
-    return TitleLarge(text, context);
+    return TitleMedium(text, context);
   }
 }
 
