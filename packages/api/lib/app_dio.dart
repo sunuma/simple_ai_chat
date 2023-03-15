@@ -26,6 +26,11 @@ class AppDio with DioMixin implements Dio {
         }
       )
     );
+    interceptors.add(
+      LogInterceptor(
+        responseBody: true
+      )
+    );
     return interceptors;
   }
 }
